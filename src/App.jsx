@@ -37,7 +37,7 @@ function App() {
 
     /*console.log(!!value.match(/^[0-9a-zA-Z]*$/));*/
    
-    if(!!value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#%&^]).{8,}$/)){
+    if(!!value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#%&^]).{4,}$/)){
      if(name=="username"){
       setusername(value)
       setisusername(true)
@@ -66,7 +66,7 @@ function App() {
         
         <form className='p-3' action=''>
           <TextField id="filled-basic" label="Username" name='username'value={username||""} variant="filled"  className='w-100 pb-4 ' onChange={(e)=>validate(e)}/>
-          {!isusername &&<p className='text-danger'>must be at least one uppercase, one lowercase, one special character and one number</p>}
+          {!isusername &&<p className='text-danger'>must be at least one uppercase, one lowercase, one special characterand one number </p>}
           <TextField id="filled-basic" label="Email" type='email' value={email} variant="filled"className='w-100 pb-4' onChange={handleEmail} /> 
           <p className='text-danger'>{message}</p>
           <TextField id="filled-basic" label="Password" name='password' value={password||""} variant="filled" className='w-100 pb-4' onChange={(e)=>validate(e)}/>
